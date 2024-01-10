@@ -121,7 +121,7 @@
       "pluginVersion": "7.2.1",
       "targets": [
         {
-          "expr": "count by (version) (polymesh_build_info)",
+          "expr": "count by (version) (polymesh_substrate_build_info)",
           "interval": "",
           "legendFormat": "{{ version }}",
           "refId": "A"
@@ -182,19 +182,19 @@
       "pluginVersion": "7.2.1",
       "targets": [
         {
-          "expr": "count(polymesh_node_roles == 4)",
+          "expr": "count(polymesh_substrate_build_info == 4)",
           "interval": "",
           "legendFormat": "operator",
           "refId": "A"
         },
         {
-          "expr": "count(polymesh_node_roles == 3)",
+          "expr": "count(polymesh_substrate_build_info == 3)",
           "interval": "",
           "legendFormat": "sentry",
           "refId": "B"
         },
         {
-          "expr": "count(polymesh_node_roles == 1)",
+          "expr": "count(polymesh_substrate_build_info == 1)",
           "interval": "",
           "legendFormat": "general",
           "refId": "C"
@@ -268,7 +268,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "rate(polymesh_import_queue_justifications_submitted[1m])",
+              "expr": "rate(polymesh_substrate_sync_import_queue_justifications_submitted[1m])",
               "format": "time_series",
               "instant": false,
               "interval": "",
@@ -368,7 +368,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "polymesh_sync_queued_blocks",
+              "expr": "polymesh_substrate_sync_queued_blocks",
               "hide": false,
               "interval": "",
               "legendFormat": "{{host}}",
@@ -468,7 +468,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "min_over_time(polymesh_sync_extra_justifications[1m])",
+              "expr": "min_over_time(polymesh_substrate_sync_extra_justifications[1m])",
               "hide": false,
               "interval": "",
               "legendFormat": "{{ host }}",
@@ -606,7 +606,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "polymesh_ready_transactions_number",
+              "expr": "polymesh_substrate_ready_transactions_number",
               "hide": false,
               "interval": "",
               "legendFormat": "{{host}}",
@@ -728,7 +728,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "polymesh_block_height{status=\"sync_target\"}",
+              "expr": "polymesh_substrate_block_height{status=\"sync_target\"}",
               "hide": false,
               "interval": "",
               "legendFormat": "{{host}}",
@@ -829,7 +829,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "increase(polymesh_block_height{status=\"sync_target\"}[1m])",
+              "expr": "increase(polymesh_substrate_block_height{status=\"sync_target\"}[1m])",
               "hide": false,
               "interval": "",
               "legendFormat": "{{host}}",
@@ -930,7 +930,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "polymesh_block_height{status=\"finalized\"}",
+              "expr": "polymesh_substrate_block_height{status=\"finalized\"}",
               "hide": false,
               "interval": "",
               "legendFormat": "{{host}}",
@@ -1071,7 +1071,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "increase(polymesh_block_height{status=\"finalized\"}[1m])",
+              "expr": "increase(polymesh_substrate_block_height{status=\"finalized\"}[1m])",
               "hide": false,
               "instant": false,
               "interval": "",
@@ -1181,7 +1181,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "polymesh_block_height{status=\"best\"}",
+              "expr": "polymesh_substrate_block_height{status=\"best\"}",
               "hide": false,
               "interval": "",
               "legendFormat": "{{host}}",
@@ -1282,7 +1282,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "increase(polymesh_block_height{status=\"best\"}[1m])",
+              "expr": "increase(polymesh_substrate_block_height{status=\"best\"}[1m])",
               "hide": false,
               "instant": false,
               "interval": "",
@@ -1384,7 +1384,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "polymesh_sub_libp2p_is_major_syncing",
+              "expr": "polymesh_substrate_sub_libp2p_is_major_syncing",
               "interval": "",
               "legendFormat": "{{ host }}",
               "refId": "A"
@@ -1526,14 +1526,14 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "120 / max(increase(polymesh_block_height{status=\"best\"}[2m]))",
+              "expr": "120 / max(increase(polymesh_substrate_block_height{status=\"best\"}[2m]))",
               "hide": false,
               "interval": "",
               "legendFormat": "Min",
               "refId": "D"
             },
             {
-              "expr": "120 / quantile(0.5, increase(polymesh_block_height{status=\"best\"}[2m]))",
+              "expr": "120 / quantile(0.5, increase(polymesh_substrate_block_height{status=\"best\"}[2m]))",
               "hide": false,
               "instant": false,
               "interval": "",
@@ -1541,7 +1541,7 @@
               "refId": "E"
             },
             {
-              "expr": "120 / min(increase(polymesh_block_height{status=\"best\"}[2m]))",
+              "expr": "120 / min(increase(polymesh_substrate_block_height{status=\"best\"}[2m]))",
               "interval": "",
               "legendFormat": "Max",
               "refId": "G"
@@ -1663,7 +1663,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "rate(polymesh_sub_libp2p_incoming_connections_handshake_errors_total{reason=\"limit-reached\"}[1m])",
+              "expr": "rate(polymesh_substrate_sub_libp2p_listeners_errors_total{reason=\"limit-reached\"}[1m])",
               "interval": "",
               "legendFormat": "{{ host }}",
               "refId": "A"
@@ -1760,7 +1760,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "rate(polymesh_sub_libp2p_pending_connections_errors_total{reason=\"limit-reached\"}[1m])",
+              "expr": "rate(polymesh_substrate_sub_libp2p_pending_connections_errors_total{reason=\"limit-reached\"}[1m])",
               "interval": "",
               "legendFormat": "{{ host }}",
               "refId": "A"
@@ -1857,7 +1857,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "rate(polymesh_sub_libp2p_incoming_connections_handshake_errors_total{reason=\"invalid-peer-id\"}[1m])",
+              "expr": "rate(polymesh_substrate_sub_libp2p_listeners_errors_total{reason=\"invalid-peer-id\"}[1m])",
               "interval": "",
               "legendFormat": "{{ host }}",
               "refId": "A"
@@ -1954,7 +1954,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "rate(polymesh_sub_libp2p_pending_connections_errors_total{reason=\"invalid-peer-id\"}[1m])",
+              "expr": "rate(polymesh_substrate_sub_libp2p_pending_connections_errors_total{reason=\"invalid-peer-id\"}[1m])",
               "interval": "",
               "legendFormat": "{{ host }}",
               "refId": "A"
@@ -2051,7 +2051,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "rate(polymesh_sub_libp2p_incoming_connections_handshake_errors_total{reason=\"transport-error\"}[1m])",
+              "expr": "rate(polymesh_substrate_sub_libp2p_listeners_errors_total{reason=\"transport-error\"}[1m])",
               "interval": "",
               "legendFormat": "{{ host }}",
               "refId": "A"
@@ -2148,7 +2148,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "rate(polymesh_sub_libp2p_pending_connections_errors_total{reason=\"transport-error\"}[1m])",
+              "expr": "rate(polymesh_substrate_sub_libp2p_pending_connections_errors_total{reason=\"transport-error\"}[1m])",
               "interval": "",
               "legendFormat": "{{ host }}",
               "refId": "A"
@@ -2246,13 +2246,13 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "rate(polymesh_sub_libp2p_connections_opened_total{direction=\"in\"}[1m])",
+              "expr": "rate(polymesh_substrate_sub_libp2p_connections_opened_total{direction=\"in\"}[1m])",
               "interval": "",
               "legendFormat": "In: {{ host }}",
               "refId": "B"
             },
             {
-              "expr": "rate(polymesh_sub_libp2p_connections_opened_total{direction=\"out\"}[1m]) * -1",
+              "expr": "rate(polymesh_substrate_sub_libp2p_connections_opened_total{direction=\"out\"}[1m]) * -1",
               "interval": "",
               "legendFormat": "Out: {{ host }}",
               "refId": "C"
@@ -2392,7 +2392,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "max_over_time(polymesh_sync_peers[1m])",
+              "expr": "max_over_time(polymesh_substrate_sync_peers[1m])",
               "hide": false,
               "interval": "",
               "legendFormat": "{{ host }}",
